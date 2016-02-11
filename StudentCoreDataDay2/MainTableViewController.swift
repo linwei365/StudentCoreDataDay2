@@ -44,10 +44,20 @@ class MainTableViewController: UITableViewController {
         
         let addAlertAction =  UIAlertAction(title: "add", style: .Default) { (alertAction:UIAlertAction) -> Void in
             
+            let textField =  alertViewController.textFields![0] 
+            
+            
+            
+            self.tableView.reloadData()
+            
         }
         
         let cancelAlertAction =  UIAlertAction(title: "cancel", style: .Cancel) { (action:UIAlertAction) -> Void in
             
+        }
+        
+        alertViewController.addTextFieldWithConfigurationHandler { (textField:UITextField) -> Void in
+             
         }
         
         alertViewController.addAction(addAlertAction)
