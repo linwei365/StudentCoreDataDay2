@@ -10,7 +10,10 @@ import UIKit
 // step 1
 import CoreData
 class MainTableViewController: UITableViewController {
+   
+//step 2 array of  Student which is an [manageObject]
     
+    var students = [Student]()
     
     
     
@@ -33,23 +36,28 @@ class MainTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
+    }
+    @IBAction func AddButtonOnClick(sender: UIBarButtonItem) {
+        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return students.count
     }
 
-    /*
+  
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
+        //step 3
+        cell.textLabel?.text = students[indexPath.row].name
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

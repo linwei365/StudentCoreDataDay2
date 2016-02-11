@@ -29,7 +29,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Students" id="yAa-rW-now">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TEu-zO-mqj"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="TEu-zO-mqj">
+                            <connections>
+                                <action selector="AddButtonOnClick:" destination="nKS-n0-XOF" id="wo0-1x-u8z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SDA-w1-MuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
