@@ -26,6 +26,7 @@ class MainTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+         
         // create fetch initial data
         let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         //create fetchRequest 
@@ -94,6 +95,7 @@ class MainTableViewController: UITableViewController {
             let textField =  alertViewController.textFields![0] as UITextField
             
             self.saveStudent(textField.text!)
+ 
             
             self.tableView.reloadData()
             
