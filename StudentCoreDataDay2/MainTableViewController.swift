@@ -25,6 +25,29 @@ class MainTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // create fetch initial data
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        //create fetchRequest 
+        
+        let fetchRequest = NSFetchRequest(entityName: "Student")
+        
+        let error: NSError?
+        
+        do {
+            
+            try students = managedObjectContext.executeFetchRequest(fetchRequest) as! [Student]
+        }
+        catch let error1 as NSError {
+            
+            error = error1
+            if error != nil {
+                print(" failed to load")
+            }
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
