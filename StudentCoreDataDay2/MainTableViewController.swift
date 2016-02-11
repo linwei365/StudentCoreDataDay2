@@ -38,15 +38,21 @@ class MainTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
+    
+    
+    func saveStudent(name:String){
+        
+    }
+    
     @IBAction func AddButtonOnClick(sender: UIBarButtonItem) {
         
         let alertViewController = UIAlertController(title: "Add Student", message: "create a new student", preferredStyle: .Alert)
         
         let addAlertAction =  UIAlertAction(title: "add", style: .Default) { (alertAction:UIAlertAction) -> Void in
             
-            let textField =  alertViewController.textFields![0] 
+            let textField =  alertViewController.textFields![0] as UITextField
             
-            
+            self.saveStudent(textField.text!)
             
             self.tableView.reloadData()
             
@@ -57,7 +63,7 @@ class MainTableViewController: UITableViewController {
         }
         
         alertViewController.addTextFieldWithConfigurationHandler { (textField:UITextField) -> Void in
-             
+            
         }
         
         alertViewController.addAction(addAlertAction)
