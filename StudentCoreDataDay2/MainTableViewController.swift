@@ -40,6 +40,22 @@ class MainTableViewController: UITableViewController {
     }
     @IBAction func AddButtonOnClick(sender: UIBarButtonItem) {
         
+        let alertViewController = UIAlertController(title: "Add Student", message: "create a new student", preferredStyle: .Alert)
+        
+        let addAlertAction =  UIAlertAction(title: "add", style: .Default) { (alertAction:UIAlertAction) -> Void in
+            
+        }
+        
+        let cancelAlertAction =  UIAlertAction(title: "cancel", style: .Cancel) { (action:UIAlertAction) -> Void in
+            
+        }
+        
+        alertViewController.addAction(addAlertAction)
+        alertViewController.addAction(cancelAlertAction)
+        
+        
+        presentViewController(alertViewController, animated: true, completion: nil)
+        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
