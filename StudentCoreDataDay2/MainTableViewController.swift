@@ -41,6 +41,24 @@ class MainTableViewController: UITableViewController {
     
     
     func saveStudent(name:String){
+        let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        
+        let student = NSEntityDescription.insertNewObjectForEntityForName("Student", inManagedObjectContext: managedObjectContext) as! Student
+        
+        student.setValue(name, forKey: "name")
+        
+        let err: NSError?
+        do {
+            
+            try managedObjectContext.save()
+             students.append(student)
+        } catch let error1 as NSError {
+            
+            err = error1
+            if err != nil {
+                print("error failed to save")
+            }
+        }
         
     }
     
